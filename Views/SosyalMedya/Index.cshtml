@@ -34,8 +34,9 @@
                                         <tr>
                                             <th style="width: 10px">#</th>
                                             <th>Sosyal Medya</th>
-                                        
-                                          
+                                            <th>Durum</th>
+
+
                                             <th>Düzenle</th>
                                             <th>Sil</th>
                                         </tr>
@@ -43,12 +44,20 @@
                                     <tbody>
                                         @foreach (var item in Model)
                                         {
-                                          
+
                                             <tr>
                                                 <td>@item.ID</td>
                                                 <td>@item.Ad</td>
+                                                @if (item.Durum == true)
+                                                {
 
 
+                                                    <td>Aktif</td>
+                                                }
+                                                else 
+                                                {
+                                                    <td>Pasif</td>
+}
                                                 <td>
                                                     <a class="btn btn-info btn-sm" href="/SosyalMedya/SosyalMedyaGuncelle/@item.ID">
                                                         <i class="fas fa-pencil-alt">
