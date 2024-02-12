@@ -8,6 +8,7 @@ using MvcCv.Repositories;
 
 namespace MvcCv.Controllers
 {
+   
     public class HobiController : Controller
     {
         // GET: Hobi

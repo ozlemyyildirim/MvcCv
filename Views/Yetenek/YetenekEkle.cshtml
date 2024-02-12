@@ -3,20 +3,44 @@
     ViewBag.Title = "YetenekEkle";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
+<!DOCTYPE html>
+<html>
+<body class="hold-transition sidebar-mini">
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+
+                <!-- /.col -->
+                <div class="col-md-12 p-2">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">Yetenek Ekleme Sayfası</h3>
+                        </div>
+                        <div class="card-body">
+
+                            <form method="post">
+
+                                @Html.Label("Yetenek Açıklaması")
+                                @Html.TextBoxFor(x => x.Yetenek, new { @class = "form-control" })
+                                <br />
+                                @Html.Label("Oran")
+                                @Html.TextBoxFor(x => x.Oran, new { @class = "form-control" })
+                                <br />
 
 
-<h4>Yetenek Ekleme Sayfası</h4>
-<br />
-<form method="post">
-  
-    @Html.Label("Yetenek Açıklaması")
-    @Html.TextBoxFor(x => x.Yetenek, new { @class = "form-control" })
-    <br />
-    @Html.Label("Oran")
-    @Html.TextBoxFor(x => x.Oran, new { @class = "form-control" })
-    <br />
+                                <button class="btn btn-info">Kaydet</button>
+                                <br />
+                            </form>
+                        </div>
+                    </div>
 
-  
-    <button class="btn btn-info">Kaydet</button>
-    <br />
-</form>
+
+                </div>
+            </div>
+
+        </div>
+
+
+    </section>
+</body>
+</html>

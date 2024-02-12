@@ -3,28 +3,52 @@
     ViewBag.Title = "DeneyimGetir";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
+<!DOCTYPE html>
+<html>
+<body class="hold-transition sidebar-mini">
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
 
-<br />
-<h4>Deneyim Güncelleme Sayfası</h4>
-<br />
-<form method="post">
-    @Html.Label("Deneyim Id")
-    @Html.TextBoxFor(x => x.ID, new { @class = "form-control" })
-    <br />
-    @Html.Label("Başlık")
-    @Html.TextBoxFor(x => x.Baslik, new { @class = "form-control" })
-    <br />
-    @Html.Label("Alt Başlık")
-    @Html.TextBoxFor(x => x.AltBaslik, new { @class = "form-control" })
-    <br />
-    @Html.Label("Açıklama")
-    @Html.TextAreaFor(x => x.Aciklama, new { @class = "form-control" })
-    <br />
-    @Html.Label("Tarih")
-    @Html.TextBoxFor(x => x.Tarih, new { @class = "form-control" })
-    <br />
-    <button class="btn btn-info">Güncelle</button>
-    <br />
-</form>
+                <!-- /.col -->
+                <div class="col-md-12 p-2">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">Deneyim Güncelleme Sayfası</h3>
+                        </div>
+                        <div class="card-body">
+
+                            <form method="post">
+                                @Html.Label("Deneyim Id")
+                                @Html.TextBoxFor(x => x.ID, new { @class = "form-control" })
+                                <br />
+                                @Html.Label("Başlık")
+                                @Html.TextBoxFor(x => x.Baslik, new { @class = "form-control" })
+                                <br />
+                                @Html.Label("Alt Başlık")
+                                @Html.TextBoxFor(x => x.AltBaslik, new { @class = "form-control" })
+                                <br />
+                                @Html.Label("Açıklama")
+                                @Html.TextAreaFor(x => x.Aciklama, new { @class = "form-control" })
+                                <br />
+                                @Html.Label("Tarih")
+                                @Html.TextBoxFor(x => x.Tarih, new { @class = "form-control" })
+                                <br />
+                                <button class="btn btn-info">Güncelle</button>
+                                <br />
+                            </form>
 
 
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+
+        </div>
+
+
+    </section>
+</body>
+</html>

@@ -3,11 +3,13 @@ using MvcCv.Repositories;
 using System.Web.Mvc;
 namespace MvcCv.Controllers
 {
+    
     public class SosyalMedyaController : Controller
     {
         // GET: SosyalMedya
         GenericRepository<Tbl_SosyalMedya> repo = new GenericRepository<Tbl_SosyalMedya>();
         DbCvEntities1 db = new DbCvEntities1();
+       
         public ActionResult Index()
         {
             var veriler = repo.List();

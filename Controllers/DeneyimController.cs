@@ -8,10 +8,12 @@ using System.Web.Mvc;
 
 namespace MvcCv.Controllers
 {
+   
     public class DeneyimController : Controller
     {
         // GET: Deneyim
         DeneyimRepository repo = new DeneyimRepository();
+        
         public ActionResult Index()
         {
             var deneyim = repo.List();
@@ -54,7 +56,7 @@ namespace MvcCv.Controllers
             Tbl_Deneyimlerim t = repo.Find(x => x.ID == p.ID);
             t.Baslik = p.Baslik;
             t.AltBaslik = p.AltBaslik;
-            t.AltBaslik = p.Aciklama;
+            t.Aciklama = p.Aciklama;
             t.Tarih = p.Tarih;
             repo.TUpdate(t);
             return RedirectToAction("Index");

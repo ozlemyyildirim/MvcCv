@@ -10,7 +10,7 @@
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="KullanciAdi" Type="varchar" MaxLength="20" />
+          <Property Name="KullaniciAdi" Type="varchar" MaxLength="20" />
           <Property Name="Sifre" Type="varchar" MaxLength="20" />
         </EntityType>
         <EntityType Name="Tbl_Deneyimlerim">
@@ -66,6 +66,18 @@
           <Property Name="Mesaj" Type="varchar" MaxLength="1000" />
           <Property Name="Tarih" Type="date" />
         </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'DbCv.dbo.Tbl_Projelerim' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Tbl_Projelerim">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ProjeAdi" Type="varchar" MaxLength="100" />
+          <Property Name="ProjeDetayi" Type="varchar" MaxLength="100" />
+          <Property Name="ProejeLink" Type="varchar" MaxLength="100" />
+          <Property Name="ProjeGorsel" Type="varchar" MaxLength="100" />
+        </EntityType>
         <EntityType Name="Tbl_Sertifikalarim">
           <Key>
             <PropertyRef Name="ID" />
@@ -102,6 +114,15 @@
           <EntitySet Name="Tbl_Sertifikalarim" EntityType="Self.Tbl_Sertifikalarim" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Tbl_SosyalMedya" EntityType="Self.Tbl_SosyalMedya" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Tbl_Yeteneklerim" EntityType="Self.Tbl_Yeteneklerim" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tbl_Projelerim" EntityType="Self.Tbl_Projelerim" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Tbl_Projelerim].[ID] AS [ID], 
+    [Tbl_Projelerim].[ProjeAdi] AS [ProjeAdi], 
+    [Tbl_Projelerim].[ProjeDetayi] AS [ProjeDetayi], 
+    [Tbl_Projelerim].[ProejeLink] AS [ProejeLink], 
+    [Tbl_Projelerim].[ProjeGorsel] AS [ProjeGorsel]
+    FROM [dbo].[Tbl_Projelerim] AS [Tbl_Projelerim]</DefiningQuery>
+          </EntitySet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
@@ -112,8 +133,8 @@
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="KullanciAdi" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="Sifre" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="KullaniciAdi" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="Tbl_Deneyimlerim">
           <Key>
@@ -194,6 +215,7 @@
           <EntitySet Name="Tbl_Sertifikalarim" EntityType="Self.Tbl_Sertifikalarim" />
           <EntitySet Name="Tbl_Yeteneklerim" EntityType="Self.Tbl_Yeteneklerim" />
           <EntitySet Name="Tbl_SosyalMedya" EntityType="DbCvModel.Tbl_SosyalMedya" />
+          <EntitySet Name="Tbl_Projelerim" EntityType="DbCvModel.Tbl_Projelerim" />
         </EntityContainer>
         <EntityType Name="Tbl_SosyalMedya">
           <Key>
@@ -205,6 +227,16 @@
           <Property Name="Ikon" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
           <Property Name="Durum" Type="Boolean" />
         </EntityType>
+        <EntityType Name="Tbl_Projelerim">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ProjeAdi" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="ProjeDetayi" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="ProejeLink" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="ProjeGorsel" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -214,8 +246,8 @@
           <EntitySetMapping Name="Tbl_Admin">
             <EntityTypeMapping TypeName="DbCvModel.Tbl_Admin">
               <MappingFragment StoreEntitySet="Tbl_Admin">
+                <ScalarProperty Name="KullaniciAdi" ColumnName="KullaniciAdi" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="KullanciAdi" ColumnName="KullanciAdi" />
                 <ScalarProperty Name="Sifre" ColumnName="Sifre" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -303,6 +335,17 @@
                 <ScalarProperty Name="Ikon" ColumnName="Ikon" />
                 <ScalarProperty Name="Link" ColumnName="Link" />
                 <ScalarProperty Name="Ad" ColumnName="Ad" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tbl_Projelerim">
+            <EntityTypeMapping TypeName="DbCvModel.Tbl_Projelerim">
+              <MappingFragment StoreEntitySet="Tbl_Projelerim">
+                <ScalarProperty Name="ProjeGorsel" ColumnName="ProjeGorsel" />
+                <ScalarProperty Name="ProejeLink" ColumnName="ProejeLink" />
+                <ScalarProperty Name="ProjeDetayi" ColumnName="ProjeDetayi" />
+                <ScalarProperty Name="ProjeAdi" ColumnName="ProjeAdi" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>

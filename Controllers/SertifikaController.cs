@@ -8,10 +8,13 @@ using MvcCv.Repositories;
 
 namespace MvcCv.Controllers
 {
+    
     public class SertifikaController : Controller
     {
         // GET: Sertifika
         GenericRepository<Tbl_Sertifikalarim> repo = new GenericRepository<Tbl_Sertifikalarim>();
+
+     
         public ActionResult Index()
         {
             var sertifika = repo.List();

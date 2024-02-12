@@ -8,10 +8,12 @@ using MvcCv.Repositories;
 
 namespace MvcCv.Controllers
 {
+  
     public class YetenekController : Controller
     {
         // GET: Yetenek
         GenericRepository<Tbl_Yeteneklerim> repo = new GenericRepository<Tbl_Yeteneklerim>();
+      
         public ActionResult Index()
         {
             var yetenekler = repo.List();

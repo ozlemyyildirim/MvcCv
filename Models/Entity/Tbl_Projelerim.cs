@@ -12,10 +12,12 @@ namespace MvcCv.Models.Entity
     using System;
     using System.Collections.Generic;
     
-    public partial class Tbl_Admin
+    public partial class Tbl_Projelerim
     {
         public int ID { get; set; }
-        public string Sifre { get; set; }
-        public string KullaniciAdi { get; set; }
+        public string ProjeAdi { get; set; }
+        public string ProjeDetayi { get; set; }
+        public string ProejeLink { get; set; }
+        public string ProjeGorsel { get; set; }
     }
 }
