@@ -18,6 +18,6 @@ namespace MvcCv.Models.Entity
         public string ProjeAdi { get; set; }
         public string ProjeDetayi { get; set; }
         public string ProejeLink { get; set; }
-        public string ProjeGorsel { get; set; }
+        public string KullanilanTeknoloji { get; set; }
     }
 }

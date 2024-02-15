@@ -74,9 +74,9 @@ warning 6002: The table/view 'DbCv.dbo.Tbl_Projelerim' does not have a primary k
           </Key>
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="ProjeAdi" Type="varchar" MaxLength="100" />
-          <Property Name="ProjeDetayi" Type="varchar" MaxLength="100" />
+          <Property Name="ProjeDetayi" Type="varchar" MaxLength="500" />
           <Property Name="ProejeLink" Type="varchar" MaxLength="100" />
-          <Property Name="ProjeGorsel" Type="varchar" MaxLength="100" />
+          <Property Name="KullanilanTeknoloji" Type="varchar" MaxLength="300" />
         </EntityType>
         <EntityType Name="Tbl_Sertifikalarim">
           <Key>
@@ -85,6 +85,7 @@ warning 6002: The table/view 'DbCv.dbo.Tbl_Projelerim' does not have a primary k
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Tarih" Type="nvarchar" MaxLength="50" />
           <Property Name="Aciklama" Type="varchar" MaxLength="250" />
+          <Property Name="Link" Type="varchar" MaxLength="100" />
         </EntityType>
         <EntityType Name="Tbl_SosyalMedya">
           <Key>
@@ -120,7 +121,7 @@ warning 6002: The table/view 'DbCv.dbo.Tbl_Projelerim' does not have a primary k
     [Tbl_Projelerim].[ProjeAdi] AS [ProjeAdi], 
     [Tbl_Projelerim].[ProjeDetayi] AS [ProjeDetayi], 
     [Tbl_Projelerim].[ProejeLink] AS [ProejeLink], 
-    [Tbl_Projelerim].[ProjeGorsel] AS [ProjeGorsel]
+    [Tbl_Projelerim].[KullanilanTeknoloji] AS [KullanilanTeknoloji]
     FROM [dbo].[Tbl_Projelerim] AS [Tbl_Projelerim]</DefiningQuery>
           </EntitySet>
         </EntityContainer>
@@ -196,6 +197,7 @@ warning 6002: The table/view 'DbCv.dbo.Tbl_Projelerim' does not have a primary k
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Aciklama" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
           <Property Name="Tarih" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Link" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="Tbl_Yeteneklerim">
           <Key>
@@ -233,9 +235,9 @@ warning 6002: The table/view 'DbCv.dbo.Tbl_Projelerim' does not have a primary k
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="ProjeAdi" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="ProjeDetayi" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="ProjeDetayi" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
           <Property Name="ProejeLink" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="ProjeGorsel" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="KullanilanTeknoloji" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -313,6 +315,7 @@ warning 6002: The table/view 'DbCv.dbo.Tbl_Projelerim' does not have a primary k
           <EntitySetMapping Name="Tbl_Sertifikalarim">
             <EntityTypeMapping TypeName="DbCvModel.Tbl_Sertifikalarim">
               <MappingFragment StoreEntitySet="Tbl_Sertifikalarim">
+                <ScalarProperty Name="Link" ColumnName="Link" />
                 <ScalarProperty Name="Tarih" ColumnName="Tarih" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Aciklama" ColumnName="Aciklama" />
@@ -342,7 +345,7 @@ warning 6002: The table/view 'DbCv.dbo.Tbl_Projelerim' does not have a primary k
           <EntitySetMapping Name="Tbl_Projelerim">
             <EntityTypeMapping TypeName="DbCvModel.Tbl_Projelerim">
               <MappingFragment StoreEntitySet="Tbl_Projelerim">
-                <ScalarProperty Name="ProjeGorsel" ColumnName="ProjeGorsel" />
+                <ScalarProperty Name="KullanilanTeknoloji" ColumnName="KullanilanTeknoloji" />
                 <ScalarProperty Name="ProejeLink" ColumnName="ProejeLink" />
                 <ScalarProperty Name="ProjeDetayi" ColumnName="ProjeDetayi" />
                 <ScalarProperty Name="ProjeAdi" ColumnName="ProjeAdi" />

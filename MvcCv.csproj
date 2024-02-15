@@ -130,6 +130,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
     <Compile Include="Controllers\DeneyimController.cs" />
     <Compile Include="Controllers\EgitimController.cs" />
@@ -2492,10 +2493,17 @@
     <Content Include="Views\SosyalMedya\Index.cshtml" />
     <Content Include="Views\SosyalMedya\SosyalMedyaGuncelle.cshtml" />
     <Content Include="Views\Login\Index.cshtml" />
+    <Content Include="Views\Default\Proje.cshtml" />
+    <Content Include="Views\Proje\Index.cshtml" />
+    <Content Include="Views\Proje\ProjeEkle.cshtml" />
+    <Content Include="Views\Proje\ProjeGuncelle.cshtml" />
+    <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Views\Admin\AdminEkle.cshtml" />
+    <Content Include="Views\Admin\AdminDuzenle.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Proje\" />
+    <Folder Include="Dosyalar\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

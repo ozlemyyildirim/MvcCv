@@ -1,0 +1,55 @@
+﻿@model MvcCv.Models.Entity.Tbl_Projelerim
+@{
+    ViewBag.Title = "ProjeGuncelle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<!DOCTYPE html>
+<html>
+<body class="hold-transition sidebar-mini">
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+
+                <!-- /.col -->
+                <div class="col-md-12 p-2">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">Proje Güncelleme Sayfası</h3>
+                        </div>
+                        <div class="card-body">
+
+                            <form method="post">
+                                
+                                @Html.Label("Proje Adı")
+                                @Html.TextBoxFor(x => x.ProjeAdi, new { @class = "form-control" })
+                                <br />
+                                @Html.Label("Proje Detayi")
+                                @Html.TextBoxFor(x => x.ProjeDetayi, new { @class = "form-control" })
+                                <br />
+                                @Html.Label("Kullanilan Teknoloji")
+                                @Html.TextBoxFor(x => x.KullanilanTeknoloji, new { @class = "form-control" })
+                                <br />
+                                @Html.Label("Proeje Link")
+                                @Html.TextBoxFor(x => x.ProejeLink, new { @class = "form-control" })
+                                <br />
+
+
+                           
+                                <button class="btn btn-info">Güncelle</button>
+                                <br />
+                            </form>
+
+
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+
+        </div>
+
+
+    </section>
+</body>
+</html>

@@ -1,0 +1,61 @@
+﻿@using MvcCv.Models.Entity
+@model List<Tbl_Projelerim>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<!DOCTYPE html>
+<html>
+<body class="hold-transition sidebar-mini">
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+
+                <!-- /.col -->
+                <div class="col-md-12 p-2">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">Eğitim Listesi</h3>
+                        </div>
+                        <div class="card-body">
+
+
+                            <table class="table table-bordered">
+                                <tr>
+                                
+                                    <th>Proje Adi</th>
+                                    <th>Proje Detayi</th>
+                                    <th>Kullanilan Teknoloji</th>
+                                    <th>ProejeLink</th>
+                                    <th>Sil</th>
+                                    <th>Düzenle</th>
+                                </tr>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                      
+                                        <td>@item.ProjeAdi</td>
+                                        <td>@item.ProjeDetayi</td>
+                                        <td>@item.KullanilanTeknoloji</td>
+                                        <td>@item.ProejeLink</td>
+                                        <td><a href="/Proje/ProjeSil/@item.ID" class="btn btn-danger">Sil</a></td>
+                                        <td><a href="/Proje/ProjeGuncelle/@item.ID" class="btn btn-success">Düzenle</a></td>
+                                    </tr>
+                                }
+
+                            </table>
+                            <br />
+                            <a href="/Proje/ProjeEkle/" class="btn btn-primary">Yeni Proje Ekle</a>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+
+        </div>
+
+
+    </section>
+</body>
+</html>

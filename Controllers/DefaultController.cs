@@ -55,6 +55,16 @@ namespace MvcCv.Controllers
             return PartialView(sertifikalar);
         }
 
+        public PartialViewResult Proje()
+        {
+            var projeler = db.Tbl_Projelerim.ToList();
+            return PartialView(projeler);
+        }
+        public PartialViewResult Admin()
+        {
+            var kullanici = db.Tbl_Admin.ToList();
+            return PartialView(kullanici);
+        }
         [HttpGet]
         public PartialViewResult Iletisim()
         {

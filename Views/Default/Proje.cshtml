@@ -1,0 +1,18 @@
+﻿@using MvcCv.Models.Entity
+@model List<Tbl_Projelerim>
+<div class="resume-section-content">
+    <h2 class="mb-5">Projelerim</h2>
+    @foreach (var x in Model)
+    {
+        <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+            <div class="flex-grow-1">
+                <h3 class="mb-0">@x.ProjeAdi</h3>
+                <div class="subheading mb-3">@x.ProjeDetayi</div>
+                <div>@x.KullanilanTeknoloji</div>
+               
+                <p><a class="link-opacity-50" href="@x.ProejeLink">Github Linki</a></p>
+            </div>
+          
+        </div>
+    }
+</div>

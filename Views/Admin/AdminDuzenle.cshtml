@@ -1,0 +1,49 @@
+﻿@model MvcCv.Models.Entity.Tbl_Admin
+@{
+    ViewBag.Title = "AdminDuzenle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<!DOCTYPE html>
+<html>
+<body class="hold-transition sidebar-mini">
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+
+                <!-- /.col -->
+                <div class="col-md-12 p-2">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">Kullanıcı Güncelleme Sayfası</h3>
+                        </div>
+                        <div class="card-body">
+
+                            <form method="post">
+                               
+                                @Html.Label("Kullanıcı Adı")
+                                @Html.TextBoxFor(x => x.KullaniciAdi, new { @class = "form-control" })
+                                <br />
+                                @Html.Label("Şifre")
+                                @Html.TextBoxFor(x => x.Sifre, new { @class = "form-control" })
+                                <br />
+                               
+                                <button class="btn btn-info">Güncelle</button>
+                                <br />
+                            </form>
+
+
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+
+        </div>
+
+
+    </section>
+</body>
+</html>
+

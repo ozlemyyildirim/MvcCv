@@ -6,44 +6,37 @@
 
 <!DOCTYPE html>
 <html>
+<head>
+    <title>@ViewBag.Title</title>
+</head>
 <body class="hold-transition sidebar-mini">
     <section class="content">
         <div class="container-fluid">
             <div class="row">
-
-                <!-- /.col -->
                 <div class="col-md-12 p-2">
                     <div class="card">
                         <div class="card-header">
                             <h3 class="card-title">Sertifika Ekleme Sayfası</h3>
                         </div>
                         <div class="card-body">
-
-                            <form method="post">
-
+                            @using (Html.BeginForm("YeniSertifika", "Sertifika", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                            {
                                 @Html.Label("Sertifika Açıklaması")
                                 @Html.TextBoxFor(x => x.Aciklama, new { @class = "form-control" })
                                 <br />
                                 @Html.Label("Tarih")
                                 @Html.TextBoxFor(x => x.Tarih, new { @class = "form-control" })
                                 <br />
-
-                                <button class="btn btn-success">Kaydet</button>
+                                @Html.Label("Dosya Seç")
+                                <input type="file" name="dosya" id="dosya" class="form-control" />
                                 <br />
-                            </form>
-
-
-
+                                <button type="submit" class="btn btn-success">Kaydet</button>
+                            }
                         </div>
                     </div>
-
-
                 </div>
             </div>
-
         </div>
-
-
     </section>
 </body>
 </html>
